@@ -1,0 +1,8 @@
+.blue-border-container {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e8f3fc;
+  border-radius: 8px;
+  border-left: none;
+  padding: 10px;
+}

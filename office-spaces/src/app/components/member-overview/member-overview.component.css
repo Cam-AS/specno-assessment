@@ -1,0 +1,10 @@
+@media (min-width: 450px) {
+  .holder {
+    display: flex;
+    justify-content: center;
+  }
+
+  .col {
+    margin-left: 1rem;
+  }
+}
