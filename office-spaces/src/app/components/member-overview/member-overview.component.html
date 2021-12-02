@@ -1,12 +1,12 @@
-<div class="mt-4 holder">
+<div class="mt-4">
   <div class="row align-items-center justify-content-center">
-    <div class="col-2">
+    <div class="col-3 d-flex justify-content-center">
       <img src="{{ member.avatar }}" />
     </div>
     <div class="col">
       <div class="ms-2">{{ member.name + " " + member.surname }}</div>
     </div>
-    <div class="col-2" (click)="openModal1(template)">
+    <div class="col-2 d-flex justify-content-center" (click)="openModal1(template)">
       <img src="assets/icons/elipse.svg" />
     </div>
   </div>

@@ -74,6 +74,17 @@ export class EditOfficeComponent implements OnInit {
     this.loadingService.hide();
   }
 
+  async deleteOffice() {
+    this.loadingService.show();
+    try {
+      await this.officeService.delete(this.office.id);
+      this.router.navigate(['/']);
+    } catch (err) {
+      console.log(err);
+    }
+    this.loadingService.hide();
+  }
+
   assignColor(i: number) {
     this.toggle = [];
     for (let i = 0; i < this.colors.length; i++) {

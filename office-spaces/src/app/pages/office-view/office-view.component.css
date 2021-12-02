@@ -25,3 +25,11 @@
   width: 100%;
   padding-right: 10px;
 }
+
+.search-bar {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e8f3fc;
+  border-radius: 8px;
+  padding: 10px;
+}

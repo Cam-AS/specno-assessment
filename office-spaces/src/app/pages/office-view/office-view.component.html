@@ -10,7 +10,26 @@
   </div>
 
   <app-office-card [office]="office"></app-office-card>
-  <app-search-bar></app-search-bar>
+
+  <div class="search-bar">
+    <div class="row">
+      <div class="col">
+        <input
+          type="text"
+          class="form-control border-0 shadow-none"
+          id="email-input"
+          placeholder="Search"
+          [(ngModel)]="search"
+          (input)="onSearchChange(search)"
+        />
+      </div>
+      <div class="col-2 d-flex align-items-center justify-content-end">
+        <div class="me-2">
+          <img src="assets/icons/search.svg" />
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="mt-4 pt-2">
     <div class="counter-container">
@@ -31,10 +50,16 @@
     <div class="row justify-content-center mt-5">No Members Added.</div>
   </div>
 
-  <div *ngFor="let member of members">
-    <app-member-overview [member]="member"></app-member-overview>
-
-   
+  <div *ngIf="searchResults.length == 0">
+    <div *ngFor="let member of members">
+      <app-member-overview [member]="member"></app-member-overview>
+    </div>
+  </div>
+  
+  <div *ngIf="searchResults.length != 0">
+    <div *ngFor="let member of searchResults">
+      <app-member-overview [member]="member"></app-member-overview>
+    </div>
   </div>
 
   <div

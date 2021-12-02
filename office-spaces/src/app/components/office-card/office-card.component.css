@@ -10,17 +10,11 @@
   padding: 10px;
 }
 
-.color-stripe {
+.stripes-box {
   border-bottom-left-radius: 8px;
   border-top-left-radius: 8px;
   border-bottom-right-radius: 8px;
   border-top-right-radius: 8px;
-  background: linear-gradient(
-    2deg,
-    rgb(168, 139, 235) 33.3%,
-    rgb(138, 111, 236) 33.3% 66.6%,
-    rgb(39, 79, 212) 66.6% 100%
-  );
 }
 
 .hide {
@@ -34,12 +28,3 @@
 .rotate {
   transform: rotateX(180deg);
 }
-
-/* @media (max-width: 310px) {
-  .col-10,
-  .row,
-  .fs-12 {
-    justify-content: center;
-    text-align: center;
-  }
-} */

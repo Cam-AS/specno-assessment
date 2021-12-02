@@ -109,7 +109,7 @@ export class MemberOverviewComponent implements OnInit {
       await this.memberService.delete(this.member.id);
       this.office = await this.officeService.findById(this.member.officeId);
       this.office.members = this.office.members.filter(
-        (x) => x != this.member.officeId
+        (x) => x != this.member.id
       );
       await this.officeService.save(this.office);
       location.reload();

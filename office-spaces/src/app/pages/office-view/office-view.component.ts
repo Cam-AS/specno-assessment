@@ -15,8 +15,11 @@ export class OfficeViewComponent implements OnInit {
   toggle: boolean[] = [false, false, false, false, false, false, false];
   member: Member = new Member();
   members: Member[] = [];
+  searchResults: Member[] = [];
+  isFormValid: boolean = false;
   office: Office = new Office();
   officeId: string = '';
+  search:string = '';
   avatars: string[] = [
     'assets/icons/astronaut1.svg',
     'assets/icons/astronaut2.svg',
@@ -32,10 +35,8 @@ export class OfficeViewComponent implements OnInit {
     private memberService: MemberService,
     private router: Router,
     private loadingService: LoadingService,
-    private officeService: OfficeService,
-  ) {
-
-  }
+    private officeService: OfficeService
+  ) {}
 
   async ngOnInit() {
     this.loadingService.show();
@@ -46,7 +47,7 @@ export class OfficeViewComponent implements OnInit {
       });
 
       this.office = await this.officeService.findById(this.officeId);
-      this.members = await this.memberService.find({'officeId': this.officeId});
+      this.members = await this.memberService.find({ officeId: this.officeId });
     } catch (err) {
       console.log(err);
     }
@@ -58,9 +59,14 @@ export class OfficeViewComponent implements OnInit {
     this.loadingService.show();
 
     try {
+      if (!this.isValid()) {
+        this.loadingService.hide();
+        this.isFormValid = !this.isFormValid;
+        return;
+      }
       this.member.officeId = this.officeId;
       this.member = await this.memberService.save(this.member);
-      
+
       this.office.members.push(this.member.id);
       await this.officeService.save(this.office);
       location.reload();
@@ -69,6 +75,18 @@ export class OfficeViewComponent implements OnInit {
     }
 
     this.loadingService.hide();
+  }
+
+  onSearchChange(searchValue: string): void {  
+    this.searchResults = this.members.filter(x => x.name.includes(searchValue));
+  }
+
+  isValid(): boolean {
+    return (
+      this.member.name != '' &&
+      this.member.surname != '' &&
+      this.member.avatar != ''
+    );
   }
 
   assignAvatar(i: number) {
@@ -80,5 +98,4 @@ export class OfficeViewComponent implements OnInit {
   back() {
     this.router.navigate(['/']);
   }
-
 }

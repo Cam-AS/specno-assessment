@@ -1,14 +1,3 @@
-@media (min-width: 450px) {
-  .holder {
-    display: flex;
-    justify-content: center;
-  }
-
-  .col {
-    margin-left: 1rem;
-  }
-}
-
 .blue-border-container {
   width: 100%;
   background: #ffffff;
@@ -20,4 +9,13 @@
 .dark {
   outline: 4px solid #475569;
   border-radius: 50px;
+}
+
+::ng-deep .modal-dialog {
+  max-width: 500px !important;
+  width: 400px;
+}
+
+::ng-deep .modal-content {
+  border-radius: 8px;
 }

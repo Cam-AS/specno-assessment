@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { database } from '@appstrax/database';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,6 @@ export class AppComponent implements OnInit {
   title = 'office-spaces';
 
   ngOnInit() {
-    const apiUrl = 'https://appstrax-database-api-nydkdz.codecapsules.co.za';
-    database.init(apiUrl);
+    database.init(environment.api);
   }
 }
