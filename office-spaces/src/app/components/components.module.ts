@@ -10,9 +10,19 @@ import { MemberOverviewComponent } from './member-overview/member-overview.compo
 import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
-  declarations: [OfficeCardComponent, SearchBarComponent, MemberOverviewComponent, LoadingComponent],
+  declarations: [
+    OfficeCardComponent,
+    SearchBarComponent,
+    MemberOverviewComponent,
+    LoadingComponent,
+  ],
   imports: [CommonModule, RouterModule, FormsModule],
-  exports: [OfficeCardComponent, SearchBarComponent, MemberOverviewComponent, LoadingComponent],
+  exports: [
+    OfficeCardComponent,
+    SearchBarComponent,
+    MemberOverviewComponent,
+    LoadingComponent,
+  ],
   providers: [],
 })
 export class ComponentsModule {}

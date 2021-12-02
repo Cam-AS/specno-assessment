@@ -32,8 +32,10 @@ export class OfficeViewComponent implements OnInit {
     private memberService: MemberService,
     private router: Router,
     private loadingService: LoadingService,
-    private officeService: OfficeService
-  ) {}
+    private officeService: OfficeService,
+  ) {
+
+  }
 
   async ngOnInit() {
     this.loadingService.show();
@@ -69,33 +71,6 @@ export class OfficeViewComponent implements OnInit {
     this.loadingService.hide();
   }
 
-  async updateMember() {
-    this.loadingService.show();
-    try {
-      await this.memberService.save(this.member);
-      location.reload();
-    } catch (err) {
-      console.log(err);
-    }
-    this.loadingService.hide();
-  }
-
-  async deleteMember() {
-    this.loadingService.show();
-    try {
-      await this.memberService.delete(this.member.id);
-      this.office = await this.officeService.findById(this.member.officeId);
-      this.office.members = this.office.members.filter(
-        (x) => x == this.member.officeId
-      );
-      await this.officeService.save(this.office);
-      location.reload();
-    } catch (err) {
-      console.log(err);
-    }
-    this.loadingService.hide();
-  }
-
   assignAvatar(i: number) {
     this.toggle = [false, false, false, false, false, false, false];
     this.toggle[i] = !this.toggle[i];
@@ -105,4 +80,5 @@ export class OfficeViewComponent implements OnInit {
   back() {
     this.router.navigate(['/']);
   }
+
 }

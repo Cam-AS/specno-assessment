@@ -14,8 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { MemberService } from './services/member.service';
 import { OfficeService } from './services/office.service';
 import { LoadingService } from './services/loading/loading.service';
-import { AnimationService } from './services/animation.service';
-import { ModalService } from './services/modal.service';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -23,15 +22,16 @@ import { ModalService } from './services/modal.service';
     LandingPageComponent,
     AddOfficeComponent,
     EditOfficeComponent,
-    OfficeViewComponent,
+    OfficeViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ComponentsModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
-  providers: [MemberService, OfficeService, LoadingService, AnimationService, ModalService],
+  providers: [MemberService, OfficeService, LoadingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
