@@ -9,6 +9,74 @@
     <div class="col-1"></div>
   </div>
 
-  <app-office-details-form></app-office-details-form>
+  <div class="mt-5">
+    <div class="blue-border-container my-4">
+      <input
+        type="text"
+        class="form-control border-0 shadow-none"
+        id="office-name"
+        placeholder="Office Name"
+        [(ngModel)]="office.name"
+      />
+    </div>
+    <div class="blue-border-container my-4">
+      <input
+        type="text"
+        class="form-control border-0 shadow-none"
+        id="physical-address"
+        placeholder="Physical Address"
+        [(ngModel)]="office.address"
+      />
+    </div>
+    <div class="blue-border-container my-4">
+      <input
+        type="text"
+        class="form-control border-0 shadow-none"
+        id="email-address"
+        placeholder="Email Address"
+        [(ngModel)]="office.email"
+      />
+    </div>
+    <div class="blue-border-container my-4">
+      <input
+        type="text"
+        class="form-control border-0 shadow-none"
+        id="phone-number"
+        placeholder="Phone Number"
+        [(ngModel)]="office.phone"
+      />
+    </div>
+    <div class="blue-border-container my-4">
+      <input
+        type="text"
+        class="form-control border-0 shadow-none"
+        id="maximum-capacity"
+        placeholder="Maximum Capacity"
+        [(ngModel)]="office.capacity"
+      />
+    </div>
+  
+    <h3 class="fw-600 my-5">Office Color</h3>
+  
+    <div class="row justify-content-center mb-2">
+      <div
+        *ngFor="let color of colors; let i = index"
+        class="mw-55 mx-2 my-1 d-flex justify-content-center"
+      >
+        <img
+          [ngClass]="toggle[i] ? 'dark' : 'null'"
+          class="my-2"
+          (click)="assignColor(i)"
+          src="{{ colors[i] }}"
+        />
+      </div>
+    </div>
+  
+    <div class="mt-5">
+      <div class="row justify-content-center">
+        <div class="custom-button" (click)="addOffice()">ADD OFFICE</div>
+      </div>
+    </div>
+  </div>
 </div>
 

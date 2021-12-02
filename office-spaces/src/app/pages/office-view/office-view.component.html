@@ -129,7 +129,10 @@
         <div class="fs-24 fw-600 my-3">Avatar</div>
 
         <div class="row justify-content-center mb-2">
-          <div *ngFor="let avatar of avatars; let i = index" class="mw-55 mx-2 my-1 d-flex justify-content-center">
+          <div
+            *ngFor="let avatar of avatars; let i = index"
+            class="mw-55 mx-2 my-1 d-flex justify-content-center"
+          >
             <img
               [ngClass]="toggle[i] ? 'dark' : 'null'"
               class="my-2"
@@ -137,69 +140,7 @@
               src="{{ avatars[i] }}"
             />
           </div>
-
-          <!-- <div class="col-1 d-flex justify-content-center">
-            <img
-              [ngClass]="toggle ? 'dark' : 'null'"
-              class="my-2"
-              (click)="assignAvatar(0)"
-              src="assets/icons/astronaut1.svg"
-            />
-          </div>
-          <div class="col-1 d-flex justify-content-center">
-            <img
-              [ngClass]="toggle1 ? 'dark' : 'null'"
-              class="my-2"
-              (click)="assignAvatar(1)"
-              src="assets/icons/astronaut2.svg"
-            />
-          </div>
-          <div class="col-1 d-flex justify-content-center">
-            <img
-              [ngClass]="toggle2 ? 'dark' : 'null'"
-              class="my-2"
-              (click)="assignAvatar(2)"
-              src="assets/icons/astronaut3.svg"
-            />
-          </div>
-          <div class="col-1 d-flex justify-content-center">
-            <img
-              [ngClass]="toggle3 ? 'dark' : 'null'"
-              class="my-2"
-              (click)="assignAvatar(3)"
-              src="assets/icons/astronaut4.svg"
-            />
-          </div> -->
         </div>
-
-        <!-- <div
-          class="row d-flex justify-content-center justify-content-evenly mx-4"
-        >
-          <div class="col-1 d-flex justify-content-center">
-            <img
-              [ngClass]="toggle4 ? 'dark' : 'null'"
-              class="my-2"
-              (click)="assignAvatar(4)"
-              src="assets/icons/astronaut5.svg"
-            />
-          </div>
-          <div class="col-1 d-flex justify-content-center">
-            <img
-              [ngClass]="toggle5 ? 'dark' : 'null'"
-              class="my-2"
-              (click)="assignAvatar(5)"
-              src="assets/icons/astronaut6.svg"
-            />
-          </div>
-          <div class="col-1 d-flex justify-content-center">
-            <img
-              [ngClass]="toggle6 ? 'dark' : 'null'"
-              class="my-2"
-              (click)="assignAvatar(6)"
-              src="assets/icons/astronaut7.svg"
-            />
-          </div>
-        </div> -->
 
         <div class="my-4 d-flex justify-content-center">
           <img src="assets/icons/modal-progress-2.svg" />

@@ -12,6 +12,7 @@ import { OfficeViewComponent } from './pages/office-view/office-view.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { FormsModule } from '@angular/forms';
 import { MemberService } from './services/member-service';
+import { OfficeService } from './services/office-service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { MemberService } from './services/member-service';
     ComponentsModule,
     FormsModule
   ],
-  providers: [MemberService],
+  providers: [MemberService, OfficeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
