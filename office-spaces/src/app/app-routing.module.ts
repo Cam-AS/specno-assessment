@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
 
-import { OfficeInfoComponent } from './pages/office-info/office-info.component';
+import { AddOfficeComponent } from './pages/add-office/add-office.component';
+import { EditOfficeComponent } from './pages/edit-office/edit-office.component';
 import { OfficeViewComponent } from './pages/office-view/office-view.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
@@ -16,8 +17,12 @@ const routes: Routes = [
     component: OfficeViewComponent,
   },
   {
+    path: 'add-office',
+    component: AddOfficeComponent,
+  },
+  {
     path: 'edit-office',
-    component: OfficeInfoComponent,
+    component: EditOfficeComponent,
   },
 ];
 

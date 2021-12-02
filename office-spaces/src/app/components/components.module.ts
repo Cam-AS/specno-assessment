@@ -8,12 +8,11 @@ import { OfficeCardComponent } from './office-card/office-card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { MemberOverviewComponent } from './member-overview/member-overview.component';
 import { OfficeDetailsFormComponent } from './office-details-form/office-details-form.component';
-import { ButtonComponent } from './button/button.component';
 
 @NgModule({
-  declarations: [OfficeCardComponent, SearchBarComponent, MemberOverviewComponent, OfficeDetailsFormComponent, ButtonComponent],
+  declarations: [OfficeCardComponent, SearchBarComponent, MemberOverviewComponent, OfficeDetailsFormComponent],
   imports: [CommonModule, RouterModule, FormsModule],
-  exports: [OfficeCardComponent, SearchBarComponent, MemberOverviewComponent, OfficeDetailsFormComponent, ButtonComponent],
+  exports: [OfficeCardComponent, SearchBarComponent, MemberOverviewComponent, OfficeDetailsFormComponent],
   providers: [],
 })
 export class ComponentsModule {}

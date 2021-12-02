@@ -6,23 +6,28 @@ import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
 
+import { AddOfficeComponent } from './pages/add-office/add-office.component';
+import { EditOfficeComponent } from './pages/edit-office/edit-office.component';
 import { OfficeViewComponent } from './pages/office-view/office-view.component';
-import { OfficeInfoComponent } from './pages/office-info/office-info.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { FormsModule } from '@angular/forms';
+import { MemberService } from './services/member-service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    OfficeInfoComponent,
+    AddOfficeComponent,
+    EditOfficeComponent,
     OfficeViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [MemberService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

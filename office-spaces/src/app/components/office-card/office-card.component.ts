@@ -20,4 +20,8 @@ export class OfficeCardComponent implements OnInit {
   officeCardClicked() {
     this.router.navigate(['/office']);
   }
+
+  editOfficeClicked() {
+    this.router.navigate(['/edit-office']);
+  }
 }
