@@ -62,6 +62,9 @@ export class OfficeViewComponent implements OnInit {
       if (!this.isValid()) {
         this.loadingService.hide();
         this.isFormValid = !this.isFormValid;
+        setTimeout(() => {
+          this.isFormValid = !this.isFormValid;
+        }, 2500);
         return;
       }
       this.member.officeId = this.officeId;

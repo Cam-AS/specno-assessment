@@ -1,4 +1,6 @@
 <div class="container my-3 max-width-600">
+  <div *ngIf="isFormValid" class="snackbar">Please fill in all fields.</div>
+
   <div class="row mb-5">
     <div class="col-1" (click)="back()">
       <img src="assets/icons/arrow-left.svg" />
@@ -55,13 +57,13 @@
         [(ngModel)]="office.capacity"
       />
     </div>
-  
-    <h3 class="fw-600 my-5">Office Color</h3>
-  
+
+    <h3 class="fw-600 my-3">Office Color</h3>
+
     <div class="row justify-content-center mb-2">
       <div
         *ngFor="let color of colors; let i = index"
-        class="mw-55 mx-2 my-1 d-flex justify-content-center"
+        class="mw-43 mx-2 my-1 d-flex justify-content-center"
       >
         <img
           [ngClass]="toggle[i] ? 'dark' : 'null'"
@@ -71,12 +73,11 @@
         />
       </div>
     </div>
-  
-    <div class="mt-5">
+
+    <div class="mt-4 mb-5">
       <div class="row justify-content-center">
         <div class="custom-button" (click)="addOffice()">ADD OFFICE</div>
       </div>
     </div>
   </div>
 </div>
-

@@ -19,10 +19,3 @@
   bottom: 0;
   z-index: 10000;
 }
-
-.center {
-  width: 100px;
-  margin: auto;
-  margin-top: calc((100vh / 2) - 50px);
-  overflow: hidden;
-}

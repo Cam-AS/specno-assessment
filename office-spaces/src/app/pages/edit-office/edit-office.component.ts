@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Member } from 'src/app/models/member';
 import { Office } from 'src/app/models/office';
 import { LoadingService } from 'src/app/services/loading/loading.service';
+import { MemberService } from 'src/app/services/member.service';
 import { OfficeService } from 'src/app/services/office.service';
 
 @Component({
@@ -12,6 +14,7 @@ import { OfficeService } from 'src/app/services/office.service';
 export class EditOfficeComponent implements OnInit {
   toggle: boolean[] = [];
   office: Office = new Office();
+  staff: Member[] = [];
   officeId: string = '';
 
   colors: string[] = [
@@ -32,6 +35,7 @@ export class EditOfficeComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private officeService: OfficeService,
+    private memberService: MemberService,
     private loadingService: LoadingService
   ) {}
 
@@ -78,6 +82,11 @@ export class EditOfficeComponent implements OnInit {
     this.loadingService.show();
     try {
       await this.officeService.delete(this.office.id);
+      this.staff = await this.memberService.find({ officeId: this.office.id });
+      for (let i = 0; i < this.staff.length; i++) {
+        await this.memberService.delete(this.staff[i].id);
+      }
+
       this.router.navigate(['/']);
     } catch (err) {
       console.log(err);

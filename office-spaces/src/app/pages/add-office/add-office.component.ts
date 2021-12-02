@@ -13,6 +13,7 @@ export class AddOfficeComponent implements OnInit {
   toggle: boolean[] = [];
   office: Office = new Office();
   offices: Office[] = [];
+  isFormValid: boolean = false;
 
   colors: string[] = [
     'assets/icons/orange.svg',
@@ -42,6 +43,14 @@ export class AddOfficeComponent implements OnInit {
     this.loadingService.show();
 
     try {
+      if (!this.isValid()) {
+        this.loadingService.hide();
+        this.isFormValid = !this.isFormValid;
+        setTimeout(() => {
+          this.isFormValid = !this.isFormValid;
+        }, 2500);
+        return;
+      }
       await this.officeService.save(this.office);
       this.router.navigate(['/']);
     } catch (err) {
@@ -49,6 +58,17 @@ export class AddOfficeComponent implements OnInit {
     }
 
     this.loadingService.hide();
+  }
+
+  isValid(): boolean {
+    return (
+      this.office.name != '' &&
+      this.office.address != '' &&
+      this.office.capacity != 0 &&
+      this.office.color != '' &&
+      this.office.email != '' &&
+      this.office.phone != ''
+    );
   }
 
   assignColor(i: number) {
