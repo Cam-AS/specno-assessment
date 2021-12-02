@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Member } from 'src/app/models/member';
 import { MemberService } from 'src/app/services/member-service';
 
@@ -20,7 +21,7 @@ export class OfficeViewComponent implements OnInit {
     'assets/icons/astronaut7.svg',
   ];
 
-  constructor(private memberService: MemberService) {}
+  constructor(private memberService: MemberService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -37,5 +38,9 @@ export class OfficeViewComponent implements OnInit {
     this.toggle = [false, false, false, false, false, false, false];
     this.toggle[i] = !this.toggle[i];
     this.member.avatar = this.avatars[i];
+  }
+
+  back() {
+    this.router.navigate(['/']);
   }
 }

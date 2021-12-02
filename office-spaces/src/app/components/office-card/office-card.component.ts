@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Office } from 'src/app/models/office';
 
 @Component({
   selector: 'app-office-card',
@@ -7,21 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./office-card.component.css'],
 })
 export class OfficeCardComponent implements OnInit {
-  status: boolean = false;
+  @Input() offices: Office[] = [];
+
+  status: boolean[] = [];
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    for (let i = 0; i < this.offices.length; i++) {
+      this.status.push(false);
+    }
+  }
 
-  toggleDrawer() {
-    this.status = !this.status;
+  toggleDrawer(i: number) {
+    this.status[i] = !this.status[i];
   }
 
   officeCardClicked() {
     this.router.navigate(['/office']);
   }
 
-  editOfficeClicked() {
-    this.router.navigate(['/edit-office']);
+  editOfficeClicked(officeId: string) {
+    this.router.navigate(['/edit-office/' + officeId]);
   }
 }

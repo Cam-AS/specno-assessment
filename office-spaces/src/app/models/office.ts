@@ -4,8 +4,8 @@ export class Office extends Model {
   name: string = '';
   address: string = '';
   email: string = '';
-  phone?: number;
-  capacity?: number;
+  phone: string = ''; 
+  capacity: number = 0;
   color: string = '';
   members: string[] = [];
 }

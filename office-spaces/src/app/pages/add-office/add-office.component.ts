@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Office } from 'src/app/models/office';
+import { LoadingService } from 'src/app/services/loading/loading.service';
 import { OfficeService } from 'src/app/services/office-service';
 
 @Component({
   selector: 'app-add-office',
   templateUrl: './add-office.component.html',
-  styleUrls: ['./add-office.component.css']
+  styleUrls: ['./add-office.component.css'],
 })
 export class AddOfficeComponent implements OnInit {
-  toggle: boolean[] = [false, false, false, false, false, false, false, false, false, false, false];
+  toggle: boolean[] = [];
   office: Office = new Office();
+  offices: Office[] = [];
 
   colors: string[] = [
     'assets/icons/orange.svg',
@@ -26,25 +29,38 @@ export class AddOfficeComponent implements OnInit {
   ];
 
   constructor(
-    private officeService: OfficeService
-  ) { }
+    private router: Router,
+    private officeService: OfficeService,
+    private loadingService: LoadingService
+  ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.office.capacity = null;
   }
 
   async addOffice() {
+    this.loadingService.show();
+
     try {
-      // await this.officeService.save(this.office);
-      console.log(this.office);
+      await this.officeService.save(this.office);
+      this.router.navigate(['/']);
     } catch (err) {
       console.log(err);
     }
+
+    this.loadingService.hide();
   }
 
   assignColor(i: number) {
-    this.toggle = [false, false, false, false, false, false, false, false, false, false, false];
+    this.toggle = [];
+    for (let i = 0; i < this.colors.length; i++) {
+      this.toggle.push(false);
+    }
     this.toggle[i] = !this.toggle[i];
     this.office.color = this.colors[i];
   }
 
+  back() {
+    this.router.navigate(['/']);
+  }
 }

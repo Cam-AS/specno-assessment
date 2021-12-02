@@ -13,6 +13,8 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { FormsModule } from '@angular/forms';
 import { MemberService } from './services/member-service';
 import { OfficeService } from './services/office-service';
+import { LoadingService } from './services/loading/loading.service';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { OfficeService } from './services/office-service';
     LandingPageComponent,
     AddOfficeComponent,
     EditOfficeComponent,
-    OfficeViewComponent
+    OfficeViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,7 @@ import { OfficeService } from './services/office-service';
     ComponentsModule,
     FormsModule
   ],
-  providers: [MemberService, OfficeService],
+  providers: [MemberService, OfficeService, LoadingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

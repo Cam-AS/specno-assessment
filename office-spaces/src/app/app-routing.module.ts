@@ -21,7 +21,7 @@ const routes: Routes = [
     component: AddOfficeComponent,
   },
   {
-    path: 'edit-office',
+    path: 'edit-office/:officeId',
     component: EditOfficeComponent,
   },
 ];
