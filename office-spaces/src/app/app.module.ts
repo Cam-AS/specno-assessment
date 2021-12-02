@@ -11,10 +11,11 @@ import { EditOfficeComponent } from './pages/edit-office/edit-office.component';
 import { OfficeViewComponent } from './pages/office-view/office-view.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { FormsModule } from '@angular/forms';
-import { MemberService } from './services/member-service';
-import { OfficeService } from './services/office-service';
+import { MemberService } from './services/member.service';
+import { OfficeService } from './services/office.service';
 import { LoadingService } from './services/loading/loading.service';
-import { LoadingComponent } from './components/loading/loading.component';
+import { AnimationService } from './services/animation.service';
+import { ModalService } from './services/modal.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     ComponentsModule,
     FormsModule
   ],
-  providers: [MemberService, OfficeService, LoadingService],
+  providers: [MemberService, OfficeService, LoadingService, AnimationService, ModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

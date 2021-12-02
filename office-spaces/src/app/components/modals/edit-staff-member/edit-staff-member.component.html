@@ -1,0 +1,16 @@
+<div *ngIf="show" class="modal-shade" (click)="hide()"></div>
+
+<div class="modal-container col-xl-5 col-lg-6 col-md-8 col-sm-10 pr-0 mr-0" *ngIf="show" [@slideInOut]>
+    <div class="d-flex h100 ">
+      <div class="modal-strip">
+        <div class="pointer bold" (click)="hide()">Close</div>
+      </div>
+
+      <div class="modal-body w-100">
+        <img class="modal-background" src="assets/images/texture-background-login.png" />
+
+        <div>Fuk</div>
+
+      </div>
+    </div>
+</div>

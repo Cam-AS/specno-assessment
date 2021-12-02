@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Office } from 'src/app/models/office';
 import { LoadingService } from 'src/app/services/loading/loading.service';
-import { OfficeService } from 'src/app/services/office-service';
+import { OfficeService } from 'src/app/services/office.service';
 
 @Component({
   selector: 'app-edit-office',

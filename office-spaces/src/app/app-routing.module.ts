@@ -13,7 +13,7 @@ const routes: Routes = [
     component: LandingPageComponent,
   },
   {
-    path: 'office',
+    path: 'office/:officeId',
     component: OfficeViewComponent,
   },
   {
