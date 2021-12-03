@@ -17,9 +17,10 @@ export class OfficeViewComponent implements OnInit {
   members: Member[] = [];
   searchResults: Member[] = [];
   isFormValid: boolean = false;
+  noResults: boolean = false;
   office: Office = new Office();
   officeId: string = '';
-  search:string = '';
+  search: string = '';
   avatars: string[] = [
     'assets/icons/astronaut1.svg',
     'assets/icons/astronaut2.svg',
@@ -80,8 +81,13 @@ export class OfficeViewComponent implements OnInit {
     this.loadingService.hide();
   }
 
-  onSearchChange(searchValue: string): void {  
-    this.searchResults = this.members.filter(x => x.name.includes(searchValue));
+  onSearchChange(searchValue: string): void {
+    this.searchResults = this.members.filter((x) =>
+      x.name.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    if (this.searchResults.length == 0) {
+      this.noResults = !this.noResults;
+    }
   }
 
   isValid(): boolean {

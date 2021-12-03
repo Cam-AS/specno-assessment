@@ -2,7 +2,7 @@
   <div *ngIf="isFormValid" class="snackbar">Please fill in all fields.</div>
   
   <div class="row mb-3">
-    <div class="col-1" (click)="back()">
+    <div class="col-1 pointer" (click)="back()">
       <img src="assets/icons/arrow-left.svg" />
     </div>
     <div class="col d-flex justify-content-center">
@@ -48,14 +48,14 @@
     </div>
   </div>
 
-  <div *ngIf="members.length == 0">
-    <div class="row justify-content-center mt-5">No Members Added.</div>
-  </div>
-
-  <div *ngIf="searchResults.length == 0">
+  <div *ngIf="searchResults.length == 0 && !noResults">
     <div *ngFor="let member of members">
       <app-member-overview [member]="member"></app-member-overview>
     </div>
+  </div>
+
+  <div *ngIf="members.length == 0">
+    <div class="row justify-content-center mt-5">No Members Added.</div>
   </div>
   
   <div *ngIf="searchResults.length != 0">
@@ -64,8 +64,12 @@
     </div>
   </div>
 
+  <div *ngIf="noResults && searchResults.length == 0">
+    <div class="row justify-content-center mt-5">No Matching Results.</div>
+  </div>
+
   <div
-    class="overlay-button"
+    class="overlay-button pointer"
     data-bs-toggle="modal"
     data-bs-target="#add-new-member-modal-1"
   >
@@ -88,7 +92,7 @@
             <div class="fs-24 fw-800 ms-3">New Staff Member</div>
           </div>
           <div
-            class="col-2 d-flex align-items-center justify-content-center"
+            class="col-2 d-flex align-items-center justify-content-center pointer"
             data-bs-dismiss="modal"
           >
             <img src="assets/icons/close-circle.svg" />
@@ -121,7 +125,7 @@
 
         <div class="row justify-content-center">
           <div
-            class="custom-button"
+            class="custom-button pointer"
             data-bs-toggle="modal"
             data-bs-target="#add-new-member-modal-2"
           >
@@ -145,7 +149,7 @@
       <div class="modal-content p-3 border-radius">
         <div class="row">
           <div
-            class="col-1 d-flex align-items-center"
+            class="col-1 d-flex align-items-center pointer"
             data-bs-toggle="modal"
             data-bs-target="#add-new-member-modal-1"
           >
@@ -155,7 +159,7 @@
             <div class="fs-24 fw-800 ms-3">New Staff Member</div>
           </div>
           <div
-            class="col-2 d-flex align-items-center justify-content-center"
+            class="col-2 d-flex align-items-center justify-content-center pointer"
             data-bs-dismiss="modal"
           >
             <img src="assets/icons/close-circle.svg" />
@@ -166,7 +170,7 @@
         <div class="row justify-content-center mb-2">
           <div
             *ngFor="let avatar of avatars; let i = index"
-            class="mw-55 mx-2 my-1 d-flex justify-content-center"
+            class="mw-55 mx-2 my-1 d-flex justify-content-center pointer"
           >
             <img
               [ngClass]="toggle[i] ? 'dark' : 'null'"
@@ -182,7 +186,7 @@
         </div>
 
         <div class="row justify-content-center">
-          <div class="custom-button" (click)="addMember()">
+          <div class="custom-button pointer" (click)="addMember()">
             ADD STAFF MEMBER
           </div>
         </div>

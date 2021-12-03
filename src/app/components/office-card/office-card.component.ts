@@ -41,27 +41,27 @@ export class OfficeCardComponent implements OnInit {
   fetchColor(color: string) {
     switch (color) {
       case 'assets/icons/orange.svg':
-        return 'linear-gradient(2deg,rgb(168, 18, 27) 33.3%,rgb(138, 161, 36) 33.3% 66.6%,rgb(95, 69, 113) 66.6% 100%)';
+        return 'linear-gradient(2deg,rgb(255, 190, 11) 33.3%,rgb(235, 170, 11) 33.3% 66.6%,rgb(205, 150, 11) 66.6% 100%)';
       case 'assets/icons/peach.svg':
-        return 'linear-gradient(2deg,rgb(168, 14, 27) 33.3%,rgb(138, 161, 36) 33.3% 66.6%,rgb(25, 173, 42) 66.6% 100%)';
+        return 'linear-gradient(2deg,rgb(255, 155, 113) 33.3%,rgb(235, 135, 103) 33.3% 66.6%,rgb(215, 115, 93) 66.6% 100%)';
       case 'assets/icons/red.svg':
-        return 'linear-gradient(2deg,rgb(168, 49, 27) 33.3%,rgb(138, 161, 36) 33.3% 66.6%,rgb(23, 9, 144) 66.6% 100%)';
+        return 'linear-gradient(2deg,rgb(251, 86, 7) 33.3%,rgb(231, 66, 7) 33.3% 66.6%,rgb(211, 66, 7) 66.6% 100%)';
       case 'assets/icons/brown.svg':
-        return 'linear-gradient(2deg,rgb(168, 19, 27) 33.3%,rgb(138, 161, 36) 33.3% 66.6%,rgb(239, 39, 114) 66.6% 100%)';
+        return 'linear-gradient(2deg,rgb(151, 81, 44) 33.3%,rgb(131, 61, 24) 33.3% 66.6%,rgb(111, 41, 14) 66.6% 100%)';
       case 'assets/icons/light-pink.svg':
-        return 'linear-gradient(2deg,rgb(168, 1, 27) 33.3%,rgb(138, 161, 36) 33.3% 66.6%,rgb(239, 79, 16) 66.6% 100%)';
+        return 'linear-gradient(2deg,rgb(219, 186, 221) 33.3%,rgb(199, 166, 201) 33.3% 66.6%,rgb(189, 146, 181) 66.6% 100%)';
       case 'assets/icons/dark-pink.svg':
-        return 'linear-gradient(2deg,rgb(255, 0, 110) 33.3%,rgb(208, 161, 36) 33.3% 66.6%,rgb(19, 9, 12) 66.6% 100%)';
+        return 'linear-gradient(2deg,rgb(255, 0, 110) 33.3%,rgb(235, 0, 100) 33.3% 66.6%,rgb(215, 0, 90) 66.6% 100%)';
       case 'assets/icons/grey.svg':
-        return 'linear-gradient(2deg,rgb(168, 14, 27) 33.3%,rgb(138, 161, 36) 33.3% 66.6%,rgb(239, 179, 112) 66.6% 100%)';
+        return 'linear-gradient(2deg,rgb(169, 240, 209) 33.3%,rgb(149, 220, 199) 33.3% 66.6%,rgb(129, 210, 189) 66.6% 100%)';
       case 'assets/icons/green.svg':
-        return 'linear-gradient(2deg,rgb(168, 94, 27) 33.3%,rgb(138, 161, 36) 33.3% 66.6%,rgb(3, 179, 112) 66.6% 100%)';
+        return 'linear-gradient(2deg,rgb(0, 180, 2) 33.3%,rgb(0, 160, 2) 33.3% 66.6%,rgb(0, 140, 2) 66.6% 100%)';
       case 'assets/icons/violet.svg':
-        return 'linear-gradient(2deg,rgb(168, 18, 27) 33.3%,rgb(138, 161, 36) 33.3% 66.6%,rgb(139, 179, 112) 66.6% 100%)';
+        return 'linear-gradient(2deg,rgb(72, 157, 218) 33.3%,rgb(62, 137, 198) 33.3% 66.6%,rgb(52, 127, 188) 66.6% 100%)';
       case 'assets/icons/blue.svg':
-        return 'linear-gradient(2deg,rgb(168, 139, 235) 33.3%,rgb(138, 111, 236) 33.3% 66.6%,rgb(39, 79, 212) 66.6% 100%)';
+        return 'linear-gradient(2deg,rgb(0, 114, 232) 33.3%,rgb(0, 94, 212) 33.3% 66.6%,rgb(0, 84, 202) 66.6% 100%)';
       case 'assets/icons/purple.svg':
-        return 'linear-gradient(2deg,rgb(168, 39, 27) 33.3%,rgb(138, 11, 36) 33.3% 66.6%,rgb(239, 17, 12) 66.6% 100%)';
+        return 'linear-gradient(2deg,rgb(131, 56, 236) 33.3%,rgb(111, 46, 216) 33.3% 66.6%,rgb(91, 36, 206) 66.6% 100%)';
       default:
         return '';
     }
